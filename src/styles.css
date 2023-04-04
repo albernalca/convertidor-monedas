@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    background-image: url('assets/img/fondo.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.fondo{
+    background-color: whitesmoke;
+    margin-bottom: 5%;
+    border-radius: 5px;
+}
+
+

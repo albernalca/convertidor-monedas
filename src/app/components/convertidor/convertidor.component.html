@@ -1,0 +1,55 @@
+<div class="container p-3 fondo">
+    
+    <mat-list class="p-2">
+        <mat-divider></mat-divider>
+        <mat-list-item>Ingrese la Cantidad</mat-list-item>
+        <mat-divider></mat-divider>
+            <mat-form-field appearance="fill" class="mt-2 ancho">
+                <mat-label>{{textoInput}}</mat-label>
+                <input matInput>
+            </mat-form-field>
+        <mat-divider></mat-divider>
+        <div class="row">
+            <div class="col-lg-6">
+
+                <mat-list-item>Tengo</mat-list-item>
+                <mat-divider></mat-divider>
+
+                    <mat-form-field appearance="fill" class="mt-3 ancho">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                            <mat-option value="one">USD</mat-option>
+                            <mat-option value="two">EUR</mat-option>
+                            <mat-option value="two">LIBRA</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                <mat-divider></mat-divider>
+
+            </div>
+            <div class="col-lg-6    ">
+
+                <mat-list-item>Quiero</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-form-field appearance="fill" class="mt-3 ancho">
+                    <mat-label>Select</mat-label>
+                    <mat-select>
+                        <mat-option value="one">USD</mat-option>
+                        <mat-option value="two">EUR</mat-option>
+                        <mat-option value="two">LIBRA</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-divider></mat-divider>
+            </div>
+        </div>
+    </mat-list>
+    <mat-divider></mat-divider>
+    <h2 class="text-center mt-3">
+        <span class="badge bg-success">1000 USD</span>
+        <span class="badge bg-secondary">SON</span>
+        <span class="badge bg-success">800 EUR</span>
+    </h2>
+    <mat-divider></mat-divider>
+</div>
