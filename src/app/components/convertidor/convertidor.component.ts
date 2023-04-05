@@ -14,7 +14,8 @@ export class ConvertidorComponent implements OnInit {
   quiero = 'EUR'
   total = 0;
   
-
+  //creo array
+  monedas: string[] = ['USD', 'EUR', 'LIBRA']
 
   constructor(){}
 

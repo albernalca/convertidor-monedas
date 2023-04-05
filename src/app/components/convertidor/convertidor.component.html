@@ -17,10 +17,8 @@
 
                     <mat-form-field appearance="fill" class="mt-3 ancho">
                         <mat-label>Select</mat-label>
-                        <mat-select>
-                            <mat-option value="one">USD</mat-option>
-                            <mat-option value="two">EUR</mat-option>
-                            <mat-option value="two">LIBRA</mat-option>
+                        <mat-select [(ngModel)]="tengo">
+                            <mat-option *ngFor="let moneda of monedas" [value]="moneda">{{moneda}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 
@@ -34,10 +32,11 @@
 
                 <mat-form-field appearance="fill" class="mt-3 ancho">
                     <mat-label>Select</mat-label>
-                    <mat-select>
-                        <mat-option value="one">USD</mat-option>
-                        <mat-option value="two">EUR</mat-option>
-                        <mat-option value="two">LIBRA</mat-option>
+                    <!--realizo Two-Way Data Binding mediante el ngModel realizo un enlace de datos bidireccional
+                    entre el ts y el html-->
+                    <mat-select [(ngModel)]="quiero">
+                        <!--Utilizo directiva ngFor para iterar el array monedas-->
+                        <mat-option *ngFor=" let moneda of monedas" [value]="moneda">{{moneda}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
