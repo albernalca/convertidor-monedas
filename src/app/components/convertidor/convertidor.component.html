@@ -2,27 +2,29 @@
     
     <mat-list class="p-2">
         <mat-divider></mat-divider>
-        <mat-list-item>Ingrese la Cantidad</mat-list-item>
+        <mat-list-item >
+            <span class="badge bg-primary">Ingrese la Cantidad</span>
+        </mat-list-item>
         <mat-divider></mat-divider>
             <mat-form-field appearance="fill" class="mt-2 ancho">
                 <mat-label>{{textoInput}}</mat-label>
-                <!--Utilizo el evento input con el metodo convertir para detectar y responder a los 
-                    cambios en los campos de entrada-->
-                <input mat en Input [(ngModel)]="cantidad" (input)="convertir()">
+                <input matInput [(ngModel)]="cantidad" type="number" (input)="convertir()">
             </mat-form-field>
         <mat-divider></mat-divider>
         <div class="row">
             <div class="col-lg-6">
 
-                <mat-list-item>Tengo</mat-list-item>
+                <mat-list-item>
+                    <span class="badge bg-primary">Tengo</span>
+                </mat-list-item>
                 <mat-divider></mat-divider>
 
                     <mat-form-field appearance="fill" class="mt-3 ancho">
                         <mat-label>Select</mat-label>
                         <!--realizo Two-Way Data Binding mediante el ngModel realizo un enlace de datos bidireccional
                         entre el ts y el html-->
-                        <!--con el evento valueChange me sirve para verificar los cambios en el formulario mediante el metodo -->
-                        <mat-select [(ngModel)]="tengo" (valueChange)="convertir()">
+                        <!--utilizo el evento ngModelChange para que actualice los datos en el formulario-->
+                        <mat-select [(ngModel)]="tengo" (ngModelChange)="convertir()">
                             <!--Utilizo directiva ngFor para iterar el array monedas-->
                             <mat-option *ngFor="let moneda of monedas" [value]="moneda">{{moneda}}</mat-option>
                         </mat-select>
@@ -31,16 +33,19 @@
                 <mat-divider></mat-divider>
 
             </div>
-            <div class="col-lg-6    ">
+            <div class="col-lg-6">
 
-                <mat-list-item>Quiero</mat-list-item>
+                <mat-list-item>
+                    <span class="badge bg-primary">Quiero</span>
+                </mat-list-item>
                 <mat-divider></mat-divider>
 
                 <mat-form-field appearance="fill" class="mt-3 ancho">
                     <mat-label>Select</mat-label>
                     <!--realizo Two-Way Data Binding mediante el ngModel realizo un enlace de datos bidireccional
                     entre el ts y el html-->
-                    <mat-select [(ngModel)]="quiero" (valueChange)="convertir()">
+                    <!--utilizo el evento ngModelChange para que actualice los datos en el formulario-->
+                    <mat-select [(ngModel)]="quiero" (ngModelChange)="convertir()">
                         <!--Utilizo directiva ngFor para iterar el array monedas-->
                         <mat-option *ngFor=" let moneda of monedas" [value]="moneda">{{moneda}}</mat-option>
                     </mat-select>
@@ -51,7 +56,7 @@
         </div>
     </mat-list>
     <mat-divider></mat-divider>
-    <h2 class="text-center mt-3">
+    <h2 *ngIf="cantidad > 0" class="text-center mt-3">
         <span class="badge bg-success">{{cantidad}} {{tengo}}</span>
         <span class="badge bg-secondary">SON</span>
         <span class="badge bg-success">{{total}} {{quiero}}</span>

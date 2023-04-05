@@ -25,7 +25,39 @@ export class ConvertidorComponent implements OnInit {
 
   //Creo metodo
   convertir(){
-    console.log('llamada al metodo')
+    
+    switch (this.tengo) {
+      case 'USD':
+        if (this.quiero === 'USD') {
+          this.total = this.cantidad;
+        } else if (this.quiero === 'EUR') {
+          this.total = parseFloat((this.cantidad * 0.84).toFixed(2));
+        } else if (this.quiero === 'LIBRA') {
+          this.total = parseFloat((this.cantidad * 0.75).toFixed(2));
+        }
+        break;
+    
+      case 'EUR':
+        if (this.quiero === 'USD') {
+          this.total = parseFloat((this.cantidad * 0.84).toFixed(2));
+        } else if (this.quiero === 'EUR') {
+          this.total = this.cantidad;
+        } else if (this.quiero === 'LIBRA') {
+          this.total = parseFloat((this.cantidad * 0.89).toFixed(2));
+        }
+        break;
+    
+      case 'LIBRA':
+        if (this.quiero === 'USD') {
+          this.total = parseFloat((this.cantidad * 0.75).toFixed(2));
+        } else if (this.quiero === 'EUR') {
+          this.total = parseFloat((this.cantidad * 0.89).toFixed(2));
+        } else if (this.quiero === 'LIBRA') {
+          this.total = this.cantidad;
+        }
+        break;
+    }
+
   }
 
 }
