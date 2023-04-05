@@ -23,4 +23,9 @@ export class ConvertidorComponent implements OnInit {
     
   }
 
+  //Creo metodo
+  convertir(){
+    console.log('llamada al metodo')
+  }
+
 }
